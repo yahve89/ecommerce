@@ -47,7 +47,7 @@ export default {
       options: [],
       brands: [],
       minPrice: 0,
-      maxPrice: 0
+      maxPrice: 10000
     }
   },
   created() {
@@ -64,11 +64,9 @@ export default {
     this.load()
   },
   methods: {
-    async load () {
-      await this.$http.get('/site/filter').then(response => {
+    load () {
+      this.$http.get('/site/filter').then(response => {
         this.$set(this, 'options', response.data.brands)
-        this.$set(this, 'minPrice', response.data.minPrice)
-        this.$set(this, 'maxPrice', response.data.maxPrice)
       })
     },
     reset () {
