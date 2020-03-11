@@ -4,7 +4,7 @@ $params = [
     'adminEmail' => 'dosug-2013@mail.ru',
     'senderEmail' => 'dosug-2013@mail.ru',
     'senderName' => 'Example.com mailer',
-    'clientHost' => 'http://localhost:8080'
+    'clientHost' => 'http://everyday-cosmetics.ru'
 ];
 
 if (file_exists(__DIR__ . '/params-local.php')) {
