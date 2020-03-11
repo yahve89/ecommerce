@@ -75,7 +75,7 @@ class SiteController extends CorsController
         } 
 
         $dataProvider = (new ProductSearch)->search($productParams);
-        $dataProvider->pagination->pageSize = 21;
+        $dataProvider->pagination->pageSize = 12;
         
         foreach ($dataProvider->getModels() as $key => $model) {
             $products[$key]['product'] = $model;
