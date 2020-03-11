@@ -18,7 +18,11 @@ Vue.use(BootstrapVue);
 Vue.config.productionTip = false;
 
 Vue.prototype.$http = Axios;
-Vue.prototype.$http.defaults.baseURL = 'http://server/';
+Vue.prototype.$http.defaults.baseURL = 'http://erp.everyday-cosmetics.ru/';
+
+if (window.location.hostname == 'localhost')
+    Vue.prototype.$http.defaults.baseURL = 'http://server/';
+
 var token = localStorage.getItem('token');
 
 if (token)
