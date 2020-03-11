@@ -1,0 +1,7 @@
+.content {
+    margin-top: 50px;
+}
+.navbar-nav > li > form > button {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

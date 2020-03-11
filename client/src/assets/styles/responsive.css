@@ -1,0 +1,21 @@
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1241px;
+    }
+}
+@media (max-width: 576px) {
+    h1 {
+        font-size: 21px;
+    }
+    #logo span {
+        font-size: 36px;
+    }
+    .nav-link {
+        display: block;
+        padding: 0.5rem 0.4rem;
+        font-size: 15px;
+    }
+    .btn-add-cart {
+        font-size: 14px;
+    }
+}
