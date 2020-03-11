@@ -83,6 +83,9 @@ export default {
     },
     async getItems(url) {
       this.$set(this, 'activeAlias', this.$route.params.alias)
+      this.$set(this, 'products', [])
+      this.$set(this, 'pagination', [])
+
       await this.$http.get(url).then(result => {
         this.$set(this, 'products', result.data.products)
         this.$set(this, 'pagination', result.data.pagination)         
