@@ -48,14 +48,8 @@ class SiteController extends CorsController
     public function actionFilter()
     {
         return [
-            'brands' => ArrayHelper::toArray(Brand::find()->where(['status' => 1])->All(), [
-                'app\models\Brand' => [
-                   'value' => 'id',
-                   'text' => 'name'                    
-                ]
-            ]),
-            'minPrice' => 10,
-            'maxPrice' => 10000,
+            'brands' => Brand::find()->select('id as value, name as text')
+                ->where(['status' => 1])->asArray()->All()
         ];
     }
 

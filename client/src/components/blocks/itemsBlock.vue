@@ -39,7 +39,6 @@ export default {
     props: ['items', 'btnName', 'classes'],
     methods: {
       preview (preview) {
-
         if (preview !== null)
           return this.$http.defaults.baseURL +'file/image?cid=' +preview.id +'&wh=150_150'
         

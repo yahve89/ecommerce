@@ -6,6 +6,7 @@
     </section>
     <section class="col-mb-9 col-lg-9">
       <div class="box mb-3">
+        <loading :active.sync="isLoading" :is-full-page="false"></loading>
         <h2>
           <span>Каталог товаров </span>
           <small v-show="title" v-text="`- ${title}`"></small>
@@ -34,11 +35,13 @@ import categoties from '../../components/blocks/categoties'
 import itemsBlock from '../../components/blocks/itemsBlock'
 import filterBar from '../../components/blocks/filterBar'
 import pagination from '../../components/blocks/pagination'
-
+import Loading from 'vue-loading-overlay'
+import 'vue-loading-overlay/dist/vue-loading.css'
 
 export default {
   name: 'catalog',
   components: {
+    Loading,
     itemsBlock,
     filterBar,
     pagination,
@@ -59,7 +62,8 @@ export default {
       ],
       products: [],
       pagination:[],
-      activeAlias: ''
+      activeAlias: '',
+      isLoading: true
     }
   },
   created() {   
@@ -68,6 +72,7 @@ export default {
   },
   watch: {
     $route() {
+      this.$set(this, 'isLoading', true)
       this.$set(this, 'title', '')
       this.getItems(this.getLink())
     }    
@@ -81,6 +86,7 @@ export default {
       await this.$http.get(url).then(result => {
         this.$set(this, 'products', result.data.products)
         this.$set(this, 'pagination', result.data.pagination)         
+        this.$set(this, 'isLoading', false)
       })
     },
     getLink() {
