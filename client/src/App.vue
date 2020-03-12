@@ -27,7 +27,7 @@
               <b> +7 (999) 624-32-00</b>
             </p>
             <b-input-group class="mt-2">
-              <b-form-input id="search" placeholder="Поиск товаров"></b-form-input>
+              <b-form-input id="search" placeholder="Поиск по товарам"></b-form-input>
               <b-input-group-append>
                 <b-button variant="search">
                   <i class="fa fa-search" aria-hidden="true"></i>

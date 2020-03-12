@@ -19,7 +19,7 @@
         :items="products"
         :classes="`col-md-4 col-lg-4`"
       ></items-block> 
-      <p  v-show="products.length == 0">По Вашему запросу ничего не найдено!</p>
+      <p v-show="products.length == 0 && isLoading == false">По Вашему запросу ничего не найдено!</p>
       <pagination 
         :totalPage="Math.ceil(pagination.totalCount / pagination.defaultPageSize)"
         v-show="(Math.ceil(pagination.totalCount / pagination.defaultPageSize) > 1)? true: false"

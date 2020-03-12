@@ -19,6 +19,10 @@ class FileController extends \yii\web\Controller
                 $width = 150; 
                 $height = 150;
                 break;
+            case '130_130':
+                $width = 130; 
+                $height = 130;
+                break;
 
             case '390_390':
                 $width = 390; 
